@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f5f4f0;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .page {
+      background: #fff;
+      max-width: 780px;
+      width: 100%;
+      padding: 3rem 3.5rem;
+      border-radius: 4px;
+    }
+
+    /* Header */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 1rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 0.5px solid #d6d4cc;
+      margin-bottom: 1.75rem;
+    }
+
+    .name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+      font-size: 13px;
+      color: #6b6b6b;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .contacts a,
+    .contacts span {
+      font-size: 13px;
+      color: #6b6b6b;
+      text-decoration: none;
+      font-weight: 300;
+    }
+
+    .contacts a:hover { color: #185fa5; }
+
+    /* Section */
+    .section { margin-bottom: 1.75rem; }
+
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #aaa9a3;
+      margin-bottom: 14px;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #4a4a4a;
+      font-weight: 300;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 0.5px solid #d6d4cc;
+      margin: 0 0 1.75rem;
+    }
+
+    /* Job */
+    .job {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .job:last-child { margin-bottom: 0; }
+
+    .job-name {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .job-company {
+      font-size: 13px;
+      color: #6b6b6b;
+      font-weight: 300;
+    }
+
+    .job-date {
+      font-size: 12px;
+      color: #aaa9a3;
+      white-space: nowrap;
+      text-align: right;
+      padding-top: 2px;
+    }
+
+    .job-desc {
+      grid-column: 1 / -1;
+      margin: 10px 0 0 0;
+      padding-left: 1rem;
+    }
+
+    .job-desc li {
+      font-size: 14px;
+      color: #4a4a4a;
+      line-height: 1.65;
+      margin-bottom: 5px;
+      font-weight: 300;
+    }
+
+    /* Two columns */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Education */
+    .edu { margin-bottom: 1rem; }
+    .edu:last-child { margin-bottom: 0; }
+
+    .edu-name {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .edu-sub {
+      font-size: 13px;
+      color: #6b6b6b;
+      font-weight: 300;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      font-size: 12px;
+      color: #6b6b6b;
+      border: 0.5px solid #c8c7c0;
+      border-radius: 6px;
+      padding: 4px 11px;
+      font-weight: 300;
+    }
+
+    /* Print */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { padding: 2rem; box-shadow: none; }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1.5rem; }
+      .header { grid-template-columns: 1fr; }
+      .contacts { align-items: flex-start; }
+      .two-col { grid-template-columns: 1fr; }
+      .name { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="section">
+    <p class="section-label">Рћ СЃРµР±Рµ</p>
+    <p class="summary">
+      РРЅР¶РµРЅРµСЂ СЃ 6+ РіРѕРґР°РјРё РѕРїС‹С‚Р° РІ backend-СЂР°Р·СЂР°Р±РѕС‚РєРµ. РЎРїРµС†РёР°Р»РёР·РёСЂСѓСЋСЃСЊ РЅР° РІС‹СЃРѕРєРѕРЅР°РіСЂСѓР¶РµРЅРЅС‹С… СЃРёСЃС‚РµРјР°С…,
+      РјРёРєСЂРѕСЃРµСЂРІРёСЃРЅРѕР№ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ Рё РїРѕСЃС‚СЂРѕРµРЅРёРё РЅР°РґС‘Р¶РЅС‹С… data pipeline. РЈРјРµСЋ СЂР°Р±РѕС‚Р°С‚СЊ РІ РєРѕРјР°РЅРґРµ
+      Рё СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РґРѕРІРѕРґРёС‚СЊ Р·Р°РґР°С‡Рё РґРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°.
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <p class="section-label">РћРїС‹С‚</p>
+
+    <div class="job">
+      <div>
+        <p class="job-name">Senior Backend Engineer</p>
+        <p class="job-company">Kaspi.kz</p>
+      </div>
+      <div class="job-date">2022 вЂ” РЅ.РІ.</div>
+      <ul class="job-desc">
+        <li>Р Р°Р·СЂР°Р±РѕС‚Р°Р» СЃРµСЂРІРёСЃ СЃРєРѕСЂРёРЅРіР° РєСЂРµРґРёС‚РЅС‹С… Р·Р°СЏРІРѕРє, РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‰РёР№ 50k+ Р·Р°РїСЂРѕСЃРѕРІ РІ СЃСѓС‚РєРё</li>
+        <li>РЎРЅРёР·РёР» latency API СЃ 800ms РґРѕ 120ms Р·Р° СЃС‡С‘С‚ РѕРїС‚РёРјРёР·Р°С†РёРё РєСЌС€РёСЂРѕРІР°РЅРёСЏ Рё Р·Р°РїСЂРѕСЃРѕРІ Рє Р‘Р”</li>
+        <li>РќР°СЃС‚СЂРѕРёР» CI/CD РїР°Р№РїР»Р°Р№РЅ РЅР° GitHub Actions, СЃРѕРєСЂР°С‚РёРІ РІСЂРµРјСЏ РґРµРїР»РѕСЏ СЃ 40 РґРѕ 8 РјРёРЅСѓС‚</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <p class="job-name">Backend Developer</p>
+        <p class="job-company">Kolesa Group</p>
+      </div>
+      <div class="job-date">2020 вЂ” 2022</div>
+      <ul class="job-desc">
+        <li>РџСЂРѕРµРєС‚РёСЂРѕРІР°Р» Рё РїРѕРґРґРµСЂР¶РёРІР°Р» REST API РґР»СЏ РїР»Р°С‚С„РѕСЂРјС‹ РѕР±СЉСЏРІР»РµРЅРёР№ СЃ 2M+ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№</li>
+        <li>РњРёРіСЂРёСЂРѕРІР°Р» РјРѕРЅРѕР»РёС‚ РЅР° РјРёРєСЂРѕСЃРµСЂРІРёСЃС‹: 12 СЃРµСЂРІРёСЃРѕРІ, Kafka, PostgreSQL</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <p class="job-name">Junior Developer</p>
+        <p class="job-company">РРЅС‚РµРіСЂР°</p>
+      </div>
+      <div class="job-date">2018 вЂ” 2020</div>
+      <ul class="job-desc">
+        <li>Р Р°Р·СЂР°Р±Р°С‚С‹РІР°Р» РІРЅСѓС‚СЂРµРЅРЅРёРµ РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё РЅР° Python Рё Django</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <p class="section-label">РќР°РІС‹РєРё</p>
+    <div class="skills">
+      <span class="skill">Python</span>
+      <span class="skill">Go</span>
+      <span class="skill">PostgreSQL</span>
+      <span class="skill">Kafka</span>
+      <span class="skill">Redis</span>
+      <span class="skill">Docker</span>
+      <span class="skill">Kubernetes</span>
+      <span class="skill">GitHub Actions</span>
+      <span class="skill">REST API</span>
+      <span class="skill">gRPC</span>
+      <span class="skill">Microservices</span>
+      <span class="skill">Linux</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="two-col">
+    <div class="section" style="margin-bottom:0">
+      <p class="section-label">РћР±СЂР°Р·РѕРІР°РЅРёРµ</p>
+      <div class="edu">
+        <p class="edu-name">РљР‘РўРЈ</p>
+        <p class="edu-sub">РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹Рµ СЃРёСЃС‚РµРјС‹, Р±Р°РєР°Р»Р°РІСЂ В· 2018</p>
+      </div>
+    </div>
+
+    <div class="section" style="margin-bottom:0">
+      <p class="section-label">РЇР·С‹РєРё</p>
+      <div class="edu">
+        <p class="edu-name">РљР°Р·Р°С…СЃРєРёР№</p>
+        <p class="edu-sub">Р РѕРґРЅРѕР№</p>
+      </div>
+      <div class="edu">
+        <p class="edu-name">Р СѓСЃСЃРєРёР№</p>
+        <p class="edu-sub">РЎРІРѕР±РѕРґРЅРѕ</p>
+      </div>
+      <div class="edu">
+        <p class="edu-name">РђРЅРіР»РёР№СЃРєРёР№</p>
+        <p class="edu-sub">Upper-Intermediate (B2)</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
